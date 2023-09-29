@@ -907,20 +907,20 @@ request_json['backupSetInfo'].update({
         if not isinstance(backupset_name, str):
             raise SDKException('Backupset', '101')
 
-            if self.has_backupset(backupset_name):
-                if self._instance_object is None:
-                    self._instance_object = self._agent_object.instances.get(
-                        self._backupsets[backupset_name]['instance']
-                    )
-                return Backupset(
-                    self._instance_object,
-                    backupset_name,
-                    self._backupsets[backupset_name]["id"]
+        if self.has_backupset(backupset_name):
+            if self._instance_object is None:
+                self._instance_object = self._agent_object.instances.get(
+                    self._backupsets[backupset_name]['instance']
                 )
-
-            raise SDKException(
-                'Backupset', '102', 'No backupset exists with name: "{0}"'.format(backupset_name)
+            return Backupset(
+                self._instance_object,
+                backupset_name,
+                self._backupsets[backupset_name]["id"]
             )
+
+        raise SDKException(
+            'Backupset', '102', 'No backupset exists with name: "{0}"'.format(backupset_name)
+        )
 
     def delete(self, backupset_name):
         """Deletes the backup set from the agent.
