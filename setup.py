@@ -45,9 +45,9 @@ def readme():
 os.chdir(ROOT)
 
 setup(
-    name='cvpysdk',
+    name='cvpysdk-hermke',
     version=get_version(),
-    author='Hermke.',
+    author='Hermke',
     author_email='harm.froyen@cegeka.com',
     description='Commvault SDK for Python (Forked by Hermke)',
     license='Apache 2.0',
