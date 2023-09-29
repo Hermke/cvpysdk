@@ -363,7 +363,7 @@ class Backupsets(object):
         if not isinstance(backupset_name, str):
             raise SDKException('Backupset', '101')
 
-        return self._backupsets and backupset_name.lower() in self._backupsets
+        return self._backupsets and backupset_name in self._backupsets
 
     def _process_add_response(self, backupset_name, request_json):
         """Runs the Backupset Add API with the request JSON provided,
