@@ -45,7 +45,7 @@ def readme():
 os.chdir(ROOT)
 
 setup(
-    name='cvpysdk-hermke',
+    name='cvpysdk',
     version=get_version(),
     author='Hermke',
     author_email='harm.froyen@cegeka.com',
