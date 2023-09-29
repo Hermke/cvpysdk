@@ -52,7 +52,7 @@ Backupsets:
     _process_add_response()         -- to process the add backupset request using API call
 
     add(backupset_name)             -- adds a new backupset to the agent of the specified client
-    
+
     add_archiveset(archiveset_name)   -- adds a new archiveset to the agent of the specified client
 
     add_v1_sharepoint_client()      -- Adds a new Office 365 V1 Share Point Pseudo Client to the Commcell.
@@ -552,7 +552,7 @@ request_json['backupSetInfo'].update({
             raise SDKException('Response', '101', self._update_response_(response.text))
 
     def add_archiveset(self, archiveset_name, is_nas_turbo_backupset=False):
-        """ 
+        """
         Adds a new archiveset to the agent. It is just a backupset but is mainly used for archive only items
 
         Args:
@@ -560,7 +560,7 @@ request_json['backupSetInfo'].update({
 
             is_nas_turbo_backupset  (bool) -- True for NAS based client.
                 default -   False
-            
+
         Returns:
         object - instance of the Backupset class, if created successfully
 
@@ -575,9 +575,9 @@ request_json['backupSetInfo'].update({
                 if response is not success
 
                 if archiveset with same name already exists
-                
 
-        """        
+
+        """
         if not (isinstance(archiveset_name, str)):
             raise SDKException('Backupset', '101')
         else:
@@ -626,7 +626,7 @@ request_json['backupSetInfo'].update({
                 ]
             }
         }
-        
+
         flag, response = self._cvpysdk_object.make_request(
             'POST', self._services['ADD_BACKUPSET'], request_json
         )
@@ -652,7 +652,7 @@ request_json['backupSetInfo'].update({
                             # so the backupsets object has all the backupsets
                             self.refresh()
                             return self.get(archiveset_name)
-                        
+
                         else:
                             o_str = ('Failed to create new Archiveset with error code: "{0}"\n'
                                      'Please check the documentation for '
@@ -906,8 +906,6 @@ request_json['backupSetInfo'].update({
         """
         if not isinstance(backupset_name, str):
             raise SDKException('Backupset', '101')
-        else:
-            backupset_name = backupset_name.lower()
 
             if self.has_backupset(backupset_name):
                 if self._instance_object is None:
@@ -1571,7 +1569,7 @@ class Backupset(object):
                 mod_time = time.strftime('%d/%m/%Y %H:%M:%S', mod_time)
             else:
                 mod_time = None
-            
+
             if 'backupTime' in result['advancedData'] and int(result['advancedData']['backupTime']) > 0:
                 bkp_time = time.localtime(int(result['advancedData']['backupTime']))
                 bkp_time = time.strftime('%d/%m/%Y %H:%M:%S', bkp_time)
@@ -1708,7 +1706,7 @@ class Backupset(object):
                         mod_time = time.strftime('%d/%m/%Y %H:%M:%S', mod_time)
                     else:
                         mod_time = None
-                    
+
                     if 'backupTime' in result['advancedData'] and int(result['advancedData']['backupTime']) > 0:
                         bkp_time = time.localtime(int(result['advancedData']['backupTime']))
                         bkp_time = time.strftime('%d/%m/%Y %H:%M:%S', bkp_time)
