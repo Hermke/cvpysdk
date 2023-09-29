@@ -47,12 +47,12 @@ os.chdir(ROOT)
 setup(
     name='cvpysdk',
     version=get_version(),
-    author='Commvault Systems Inc.',
-    author_email='Dev-PythonSDK@commvault.com',
-    description='Commvault SDK for Python',
+    author='Hermke.',
+    author_email='harm.froyen@cegeka.com',
+    description='Commvault SDK for Python (Forked by Hermke)',
     license='Apache 2.0',
     long_description=readme(),
-    url='https://github.com/Commvault/cvpysdk',
+    url='https://github.com/Hermke/cvpysdk',
     scripts=[],
     packages=find_packages(),
     keywords='commvault, python, sdk, cv, simpana, commcell, cvlt, webconsole',
@@ -60,8 +60,8 @@ setup(
     install_requires=['requests', 'future', 'xmltodict'],
     zip_safe=False,
     project_urls={
-        'Bug Tracker': 'https://github.com/Commvault/cvpysdk/issues',
+        'Bug Tracker': 'https://github.com/Hermke/cvpysdk/issues',
         'Documentation': 'https://commvault.github.io/cvpysdk/',
-        'Source Code': 'https://github.com/Commvault/cvpysdk/tree/master'
+        'Source Code': 'https://github.com/Hermke/cvpysdk/tree/master'
     }
 )
